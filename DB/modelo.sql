@@ -36,6 +36,17 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
+-- Table `mydb`.`Periodo`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`Periodo` (
+  `idPeriodo` INT NOT NULL AUTO_INCREMENT,
+  `fechaCrea` DATE NOT NULL,
+  `fechaFIn` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`idPeriodo`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
 -- Table `mydb`.`Postulacion`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Postulacion` (
@@ -43,8 +54,16 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Postulacion` (
   `codigoP` VARCHAR(45) NOT NULL,
   `fechaP` DATE NOT NULL,
   `estadoP` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`idPostulacion`))
+  `Periodo_idPeriodo` INT NOT NULL,
+  PRIMARY KEY (`idPostulacion`, `Periodo_idPeriodo`),
+  CONSTRAINT `fk_Postulacion_Periodo1`
+    FOREIGN KEY (`Periodo_idPeriodo`)
+    REFERENCES `mydb`.`Periodo` (`idPeriodo`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
+
+CREATE INDEX `fk_Postulacion_Periodo1_idx` ON `mydb`.`Postulacion` (`Periodo_idPeriodo` ASC) VISIBLE;
 
 
 -- -----------------------------------------------------
