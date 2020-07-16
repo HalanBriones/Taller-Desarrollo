@@ -246,13 +246,13 @@
                 </div>
                 <div class="x_content">
                   <br>
-                  <form class="form-label-left input_mask">
+                  <form class="form-label-left input_mask" action="../../../controller/postulanteController.php" method='POST'>
                     <div class="row" style="padding: 15px;">
                       <div class="col-sm-12 col-md-6">
                         <div class="form-group col-sm-12">
                           <label class="col-form-label col-sm-6 ">Rut </label>
                           <div class="col-md-12  form-group has-feedback">
-                            <input type="text" class="form-control has-feedback-left" id="inputSuccess2" placeholder="19.325.256-2">
+                            <input type="text" name="rut" class="form-control has-feedback-left" id="inputSuccess2" placeholder="19.325.256-2">
                             <span class="fa fa-barcode form-control-feedback left" aria-hidden="true"></span>
                           </div>
                         </div>
@@ -260,7 +260,7 @@
                         <div class="form-group col-sm-12">
                           <label class="col-form-label col-sm-6 ">Nombres </label>
                           <div class="col-md-12 col-sm-12  form-group has-feedback">
-                            <input type="text" class="form-control has-feedback-left" id="inputSuccess2" placeholder="Halan Alberto">
+                            <input type="text" name="nombre1" class="form-control has-feedback-left" id="inputSuccess2" placeholder="Halan Alberto">
                             <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
                           </div>
                         </div>
@@ -268,7 +268,7 @@
                         <div class="form-group col-sm-12">
                           <label class="col-form-label col-sm-6 ">Apellido Paterno </label>
                           <div class="col-md-12 col-sm-12  form-group has-feedback">
-                            <input type="text" class="form-control has-feedback-left" id="inputSuccess2" placeholder="Brito">
+                            <input type="text" name='apellidoP' class="form-control has-feedback-left" id="inputSuccess2" placeholder="Brito">
                             <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
                           </div>
                         </div>
@@ -276,7 +276,7 @@
                         <div class="form-group col-sm-12">
                           <label class="col-form-label col-sm-6 ">Apellido Materno </label>
                           <div class="col-md-12  form-group has-feedback">
-                            <input type="text" class="form-control has-feedback-left" id="inputSuccess2" placeholder="Briones">
+                            <input type="text"  name="apellidoM" class="form-control has-feedback-left" id="inputSuccess2" placeholder="Briones">
                             <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
                           </div>
                         </div>
@@ -284,21 +284,22 @@
                         <div class="form-group col-sm-12">
                           <label class="col-form-label col-sm-6 ">Educacion </label>
                           <div class="col-md-12 col-sm- ">
-                            <select class="select2_group form-control educ">
+                            <select name= 'nivelEstudio'class="select2_group form-control educ">
                               <option value="oo">Nivel de Educación</option>
                               <optgroup label="Enseñanza basica">
-                                <option value="AK">No cursada</option>
-                                <option value="HI">Incompleta</option>
-                                <option value="WA">Completa</option>
+                                <option value=1>No cursada</option>
+                                <option value=2>Incompleta</option>
+                                <option value=3>Completa</option>
                               </optgroup>
                               <optgroup label="Enseñanza media">
-                                <option value="CA">No cursada</option>
-                                <option value="NV">Incompleta</option>
-                                <option value="OR">Completa</option>
+                                <option value=4>No cursada</option>
+                                <option value=5>Incompleta</option>
+                                <option value=6>Completa</option>
                               </optgroup>
                               <optgroup label="Enseñanza superior">
-                                <option value="AZ">Cursando</option>
-                                <option value="CO">Completa</option>
+                                <option value=7>Cursando</option>
+                                <option value=8>Incompleta</option>
+                                <option value=9>Completa</option>
                               </optgroup>
                             </select>
                             <span class="fa fa-book form-control-feedback left" aria-hidden="true"></span>
@@ -308,7 +309,7 @@
                         <div class="form-group col-sm-12">
                           <label class="col-form-label col-sm-6 ">Fecha Nacimiento </label>
                           <div class="col-md-12  form-group has-feedback">
-                            <input type="date" class="form-control has-feedback-left" id="inputSuccess2">
+                            <input type="date" name = "fechaNac" class="form-control has-feedback-left" id="inputSuccess2">
                             <span class="fa fa-calendar form-control-feedback left" aria-hidden="true"></span>
                           </div>
                         </div>
@@ -358,7 +359,7 @@
                         <div class="form-group col-sm-12">
                           <label class="col-form-label col-sm-6 ">Telefono Personal </label>
                           <div class="col-md-12  form-group has-feedback">
-                            <input type="text" class="form-control has-feedback-left" id="inputSuccess2" placeholder="+569 48573923">
+                            <input type="text" name="telefono" class="form-control has-feedback-left" id="inputSuccess2" placeholder="+569 48573923">
                             <span class="fa fa-phone form-control-feedback left" aria-hidden="true"></span>
                           </div>
                         </div>
@@ -366,7 +367,7 @@
                         <div class="form-group col-sm-12">
                           <label class="col-form-label col-sm-6 ">Telefono de Emergencia </label>
                           <div class="col-md-12  form-group has-feedback">
-                            <input type="text" class="form-control has-feedback-left" id="inputSuccess2" placeholder="+569 56764939">
+                            <input type="text" name="telefonoEmer" class="form-control has-feedback-left" id="inputSuccess2" placeholder="+569 56764939">
                             <span class="fa fa-phone form-control-feedback left" aria-hidden="true"></span>
                           </div>
                         </div>
@@ -397,7 +398,7 @@
                         <div class="form-group col-sm-12">
                           <label class="col-form-label col-sm-6 ">Email </label>
                           <div class="col-md-12  form-group has-feedback">
-                            <input type="text" class="form-control has-feedback-left" id="inputSuccess2"
+                            <input type="text" name="correo" class="form-control has-feedback-left" id="inputSuccess2"
                               placeholder="halan.briones1701@alumnos.ubiobio.cl">
                             <span class="fa fa-envelope form-control-feedback left" aria-hidden="true"></span>
                           </div>
@@ -415,7 +416,7 @@
                         <div class="form-group col-sm-12">
                           <label class="col-form-label col-sm-6 ">Campos de Enfermedades</label>
                           <div class="col-md-12  form-group has-feedback">
-                            <textarea class="form-control has-feedback-left" name="" id="" cols="30" rows="5"> </textarea>
+                            <textarea class="form-control has-feedback-left" name="enfermedades" id="" cols="30" rows="5"> </textarea>
                             
                           </div>
                         </div>
@@ -424,7 +425,7 @@
                       
                     </div>
                     
-
+                    <input type="submit" value="Guardar" class="btn btn-success boton">
                   </form>
                 </div>
               </div>
@@ -473,7 +474,7 @@
           </div>
 
           <div class="row justify-content-end">
-            <button class="btn btn-success boton">Guardar</button>
+            <!--<input type="submit" value="Guardar" class="btn btn-success boton"> -->
           </div>
 
         </div>
