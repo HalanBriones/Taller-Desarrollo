@@ -352,6 +352,29 @@
                                 class="action-cnt">1 Records Selected</span> ) <i class="fa fa-chevron-down"></i></a>
                           </th>
                         </tr>
+                        <?php
+                          require_once "../../../controller/postulanteController.php";
+
+                          foreach($this->modelo->mostrar() as $lo) :?>
+                          <tr>
+                            <td><?php echo $lo->nombre1 ?></td>
+                            <td><?php echo $lo->apellidoP ?></td>
+                            <td><?php echo $lo->apellidoM ?></td>
+                            <td><?php echo $lo->fechaNac ?></td>
+                            <td><?php echo $lo->region ?></td>
+                            <td><?php echo $lo->telefono ?></td>
+                            <td class=" last"><a href="fichaPersonal.html">Ver</a></td>
+
+                            <td>
+                              <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider round"></span>
+                              </label>
+                            </td> 
+                          </tr>
+                            
+                          <?php endforeach;  ?>
+
                       </thead>
                       <tbody>
                         <tr class="even pointer">
