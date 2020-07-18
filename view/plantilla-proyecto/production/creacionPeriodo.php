@@ -265,9 +265,8 @@
               <h3>Creacion Periodo</h3>
             </div>
           </div>
-
+          <?php $año= date("Y"); ?>
           <div class="clearfix"></div>
-
           <div class="row">
             <div class="col-md-12 col-sm-12  ">
               <div class="x_panel">
@@ -281,8 +280,8 @@
                     <div class="form-group col-sm-12">
                       <label class="col-form-label col-sm-2 ">Fecha Inicio </label>
                       <div class="col-md-6 col-sm-6  form-group has-feedback">
-                        <input type="text" class="form-control has-feedback-left" required id="txtFromDate"
-                           value="2020-05-01" name="fechaIni">
+                        <input type="text" class="form-control has-feedback-left col-4  " required id="txtFromDate"
+                           value="<?php echo $año ?>-05-01" name="fechaIni" autocomplete="off">
                         <span class="fa fa-calendar form-control-feedback left" aria-hidden="true"></span>
                       </div>
                     </div>
@@ -290,8 +289,8 @@
                     <div class="form-group col-sm-12">
                       <label class="col-form-label col-sm-2 ">Fecha Fin </label>
                       <div class="col-md-6 col-sm-6  form-group has-feedback">
-                        <input type="text" class="form-control has-feedback-left" id="txtToDate"
-                          value="2020-09-01" name="fechaFin">
+                        <input type="text" class="form-control has-feedback-left col-4" id="txtToDate"
+                          value="<?php echo $año ?>-09-01" name="fechaFin" autocomplete="off">
                         <span class="fa fa-calendar form-control-feedback left" aria-hidden="true"></span>
                       </div>
                     </div>
