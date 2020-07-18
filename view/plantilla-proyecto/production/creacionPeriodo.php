@@ -295,13 +295,20 @@
                         <span class="fa fa-calendar form-control-feedback left" aria-hidden="true"></span>
                       </div>
                     </div>
-
+                      <?php $hoy=date("Y-m-d") ?>
+                      <br>
+                      <?php $grande=$this->MODEL->masGrande()?>
+  
+                      <?php if($this->MODEL->fechaMasGrande()>=$hoy): ?>
+                      <br>
+                      <h2><small><p>No se permite la creación de un nuevo periodo, actualice el periodo actual para darle más plazo</p></small></h2>
+                      <?php elseif($this->MODEL->fechaMasGrande()<=$hoy): ?>
                       <br>
                       <h2><small><p>Al hacer click en el boton crear se enviara un correo a todos los postulantes y brigadistas menores de 55 años para repostular.</p></small></h2>
                       <br>
                       
                      <input type="submit" name="botonGuardar"value="Crear" class="btn btn-success ">
-                   
+                      <?php endif ?>
                      
                      
 
@@ -322,7 +329,7 @@
                       <th>Modificar</th>
                     </tr>
                   </thead>
-                  <?php $grande=$this->MODEL->masGrande()?>
+                 
                    
                   <?php foreach($this->MODEL->listar() as $row):?>
                     <tr>

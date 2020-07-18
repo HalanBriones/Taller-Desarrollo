@@ -133,5 +133,31 @@ class fecha{
             die($e->getMessage);
         }
     }
+
+
+    public function fechaMasGrande(){
+        try {
+            $id=$this->masGrande();
+            //echo $id;
+            $query="SELECT fechaFin FROM fecha WHERE idFecha='$id'";
+            $smt = $this->CNX->prepare($query);
+            $smt->execute();
+            $result = $smt->fetchColumn();
+            return $result;
+            
+        } catch (Exception $e) {
+            die($e->getMessage);
+        }
+    }
+
+    public function getAño(){
+        $año=getdate("Y");
+        return $año;
+    }
+
+    public function getFecha(){
+        $fecha=getdate("Y-m-d");
+        return $fecha;
+    }
 }   
 ?>
