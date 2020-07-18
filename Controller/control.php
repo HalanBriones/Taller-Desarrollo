@@ -1,6 +1,6 @@
 <?php
 
-    include_once 'Model/zapato.php';
+    include_once 'Model/fecha.php';
 
 class control{
 
@@ -24,7 +24,7 @@ class control{
             $nuevaFecha = $this->MODEL->cargarID($_REQUEST['id']);
         }
 
-        include_once 'View/save.php';
+        include_once 'View/plantilla-proyecto/production/edicionPeriodo.php';
 
     }
 
@@ -35,8 +35,9 @@ class control{
         $nuevaFecha->fechaInicio=$_POST['fechaIni'];
         $nuevaFecha->fechaFin=$_POST['fechaFin'];
 
-        //$nuevaFecha->idFecha > 0 ?$this->MODEL->actualizarDatos($nuevaFecha) : 
+        $nuevaFecha->idFecha > 0 ?$this->MODEL->actualizarDatos($nuevaFecha) : 
         $this->MODEL->registrar($nuevaFecha);
+        
         
         header("Location:index.php");
 

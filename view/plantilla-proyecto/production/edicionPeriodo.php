@@ -8,7 +8,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Nuevo Periodo</title>
+  <title>Edición Periodo</title>
 
   <!-- Bootstrap -->
   <link href="View/plantilla-proyecto/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -230,7 +230,7 @@
         <div class="">
           <div class="page-title">
             <div class="title_left">
-              <h3>Creacion Periodo</h3>
+              <h3>Edición Periodo</h3>
             </div>
           </div>
 
@@ -240,7 +240,7 @@
             <div class="col-md-12 col-sm-12  ">
               <div class="x_panel">
                 <div class="x_title">
-                  <h2>Nuevo periodo <small>Ingrese fechas del nuevo periodo de postulacion</small></h2>
+                  <h2>Edición periodo <small>Ingrese fechas para editar el periodo de postulación</small></h2>
                   <div class="clearfix"></div>
                 </div>
                 <div class="x_content">
@@ -276,36 +276,7 @@
                   </form>
                 </div>
               </div>
-              <div class="x_panel">
-                <div class="x_title">
-                  <h2>Lista de Periodos <small>Solo el periodo vigente puede ser modificado</small></h2>
-                  <div class="clearfix"></div>
-                </div>
-                <table class="table">
-                  <thead class="thead-dark">
-                    <tr>
-                     
-                      <th>Fecha Inicio</th>
-                      <th>Fecha Termino</th>
-                      <th>Modificar</th>
-                    </tr>
-                  </thead>
-                  <?php $grande=$this->MODEL->masGrande()?>
-                   
-                  <?php foreach($this->MODEL->listar() as $row):?>
-                    <tr>
-
-                      <td><?php echo $row->fechaInicio?></td>
-                      <td><?php echo $row->fechaFin?></td>
-                      <?php if($grande==$row->idFecha):?>
-                        <td><a href="?c=nuevo&id=<?php echo $row->idFecha; ?>" class="btn btn-warning">Modificar</a</td> 
-                      <?php elseif ($grande!=$row->idFecha):?>
-                        <td></td>
-                     <?php endif ?>
-                    </tr>
-                  <?php endforeach?>
-                </table>
-              </div>
+              
             </div>
           </div>
         </div>

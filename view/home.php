@@ -30,6 +30,7 @@
                         <th>Eliminar</th>
                         <th>Editar</th> 
                     </tr>
+                    <?php foreach($this->MODEL->masGrande() as $caca):?>
                     <?php foreach($this->MODEL->listar() as $row):?>
                         <tr class="black-text white">
                             <td><?php echo $row->id_zapato?></td>
@@ -47,6 +48,7 @@
                             </td>
                         </tr>
                     <?php endforeach ?>
+                    <?php endforeach?>
                 </table>
                 <a href="?c=nuevo" class="btn btn-block black">Nuevo</a>
             </div>

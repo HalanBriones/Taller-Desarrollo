@@ -20,7 +20,7 @@ class fecha{
     public function listar(){
 
         try{
-            $query="SELECT * FROM fecha";
+            $query="SELECT * FROM fecha ORDER BY IdFecha DESC";
             $smt=$this->CNX->prepare($query);
             $smt->execute();
             $result = $smt->fetchAll(PDO::FETCH_OBJ);
@@ -50,11 +50,10 @@ class fecha{
     public function cargarID($id){
 
         try{
-            $query="SELECT * FROM dbozapato WHERE id_zapato=?";
+            $query="SELECT * FROM fecha WHERE idFecha=?";
             $smt=$this->CNX->prepare($query);
             $smt->execute(array($id));
             $result = $smt->fetch(PDO::FETCH_OBJ);
-
             return $result;
         }catch(Exception $e){
             die($e->getMessage());
@@ -95,6 +94,8 @@ class fecha{
         try {
             $query = "INSERT INTO fecha (fechaInicio, fechaFin) values (?,?)";
             $this->CNX->prepare($query)->execute(array($data->fechaInicio,$data->fechaFin));
+            $this->CNX = conexion::conectar()->lastInsertId();
+
         } catch (Exception $e) {
             die($e->getMessage());
         }
@@ -116,6 +117,20 @@ class fecha{
             $smt->execute(array($id));
         } catch (Exception $e) {
             die($e->getMessage());
+        }
+    }
+
+    public function masGrande(){
+
+        try {
+            $query="SELECT MAX(idFecha)
+            FROM fecha";
+            $smt = $this->CNX->prepare($query);
+            $smt->execute();
+            $result = $smt->fetchColumn();
+            return $result;
+        } catch (Exception $e) {
+            die($e->getMessage);
         }
     }
 }   
