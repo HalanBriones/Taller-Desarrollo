@@ -33,7 +33,7 @@
                     <?php foreach($this->MODEL->listar() as $row):?>
                         <tr class="black-text white">
                             <td><?php echo $row->id_zapato?></td>
-                            <td>$<?php echo $row->precio?></td>
+                            <td><?php echo $row->precio?></td>
                             <td><?php echo $row->color?></td>
                             <td><?php echo $row->estilo?></td>
                             <td><?php echo $row->talla?></td>
