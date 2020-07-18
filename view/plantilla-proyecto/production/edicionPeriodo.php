@@ -48,6 +48,12 @@
     });  
 });
 </script>
+
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
 </head>
 
 <body class="nav-md">
@@ -297,6 +303,7 @@
                       
                       
                      <input type="submit" name="botonGuardar"value="Crear" class="btn btn-success ">
+                     <button onclick="goBack()" class="btn btn-danger">Volver</button>
                    
                      
                      
