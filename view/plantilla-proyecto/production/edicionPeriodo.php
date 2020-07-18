@@ -246,11 +246,12 @@
                 <div class="x_content">
                   <br>
                   <form class="form-label-left input_mask" method="post" action="?c=guardar">
+                  <input type="hidden" name="fechaID" value="<?php echo $nuevaFecha->idFecha ?>">
                     <div class="form-group col-sm-12">
                       <label class="col-form-label col-sm-2 ">Fecha Inicio </label>
                       <div class="col-md-6 col-sm-6  form-group has-feedback">
                         <input type="date" class="form-control has-feedback-left" required id="inputSuccess2"
-                           value="2020-05-01" name="fechaIni">
+                           value="<?php echo $nuevaFecha->fechaInicio ?>" name="fechaIni">
                         <span class="fa fa-calendar form-control-feedback left" aria-hidden="true"></span>
                       </div>
                     </div>
@@ -259,7 +260,7 @@
                       <label class="col-form-label col-sm-2 ">Fecha Fin </label>
                       <div class="col-md-6 col-sm-6  form-group has-feedback">
                         <input type="date" class="form-control has-feedback-left" id="inputSuccess2"
-                          value="2020-09-01" name="fechaFin">
+                          value="<?php echo $nuevaFecha->fechaFin ?>" name="fechaFin">
                         <span class="fa fa-calendar form-control-feedback left" aria-hidden="true"></span>
                       </div>
                     </div>
