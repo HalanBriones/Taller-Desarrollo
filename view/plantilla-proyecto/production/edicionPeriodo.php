@@ -266,8 +266,7 @@
                     </div>
 
                       <br>
-                      <h2><small><p>Al hacer click en el boton crear se enviara un correo a todos los postulantes y brigadistas menores de 55 años para repostular.</p></small></h2>
-                      <br>
+                      
                       
                      <input type="submit" name="botonGuardar"value="Crear" class="btn btn-success ">
                    

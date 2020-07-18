@@ -18,7 +18,39 @@
   <link href="View/plantilla-proyecto/vendors/nprogress/nprogress.css" rel="stylesheet">
   <!-- Custom Theme Style -->
   <link href="View/plantilla-proyecto/build/css/custom.min.css" rel="stylesheet">
+  
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+    $(document).ready(function(){
+    $("#txtFromDate").datepicker({
+        firstDay: 1,
+        dayNames: ["Domingo","Lunes","Martes","Miercoles","Jueves","Viernes","Sabado"],
+        dayNamesMin: ["Do","Lu","Ma","Mi","Ju","Vi","Sa"],
+        monthNames: ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"],
+        dateFormat:"yy/mm/dd",
+        numberOfMonths: 1,
+        onSelect: function(selected) {
+          $("#txtToDate").datepicker("option","minDate", selected)
+        }
+    });
+    $("#txtToDate").datepicker({ 
+        firstDay: 1,
+        dayNames: ["Domingo","Lunes","Martes","Miercoles","Jueves","Viernes","Sabado"],
+        dayNamesMin: ["Do","Lu","Ma","Mi","Ju","Vi","Sa"],
+        monthNames: ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"],
+        dateFormat:"yy/mm/dd",
+        numberOfMonths: 1,
+        onSelect: function(selected) {
+           $("#txtFromDate").datepicker("option","maxDate", selected)
+        }
+    });  
+});
+</script>
 </head>
+
 
 <body class="nav-md">
   <div class="container body">
@@ -249,7 +281,7 @@
                     <div class="form-group col-sm-12">
                       <label class="col-form-label col-sm-2 ">Fecha Inicio </label>
                       <div class="col-md-6 col-sm-6  form-group has-feedback">
-                        <input type="date" class="form-control has-feedback-left" required id="inputSuccess2"
+                        <input type="text" class="form-control has-feedback-left" required id="txtFromDate"
                            value="2020-05-01" name="fechaIni">
                         <span class="fa fa-calendar form-control-feedback left" aria-hidden="true"></span>
                       </div>
@@ -258,7 +290,7 @@
                     <div class="form-group col-sm-12">
                       <label class="col-form-label col-sm-2 ">Fecha Fin </label>
                       <div class="col-md-6 col-sm-6  form-group has-feedback">
-                        <input type="date" class="form-control has-feedback-left" id="inputSuccess2"
+                        <input type="text" class="form-control has-feedback-left" id="txtToDate"
                           value="2020-09-01" name="fechaFin">
                         <span class="fa fa-calendar form-control-feedback left" aria-hidden="true"></span>
                       </div>
@@ -323,8 +355,7 @@
     </div>
   </div>
 
-  <!-- jQuery -->
-  <script src="View/plantilla-proyecto/vendors/jquery/dist/jquery.min.js"></script>
+  
   <!-- Bootstrap -->
   <script src="View/plantilla-proyecto/vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   <!-- FastClick -->

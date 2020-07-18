@@ -101,10 +101,10 @@ class fecha{
         }
     }
 
-    public function actualizarDatos(zapato $data){
+    public function actualizarDatos(fecha $data){
         try {
-            $query = "UPDATE dbozapato SET precio=?,color=?,id_estilo=?,id_talla=?,id_genero=?,cantidad=? WHERE id_zapato=?";
-            $this->CNX->prepare($query)->execute(array($data->precio,$data->color,$data->id_estilo,$data->id_talla,$data->id_genero,$data->cantidad,$data->id_zapato));
+            $query = "UPDATE fecha SET fechaInicio=?,fechaFin=? WHERE idFecha=?";
+            $this->CNX->prepare($query)->execute(array($data->fechaInicio,$data->fechaFin,$data->idFecha));
         } catch (Exception $e) {
             die($e->getMessage());
         }
