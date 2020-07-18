@@ -17,11 +17,10 @@ class fecha{
         }
     }
 
-   /* public function listar(){
+    public function listar(){
 
         try{
-            $query="SELECT z.id_zapato,z.precio,z.color,e.estilo,t.talla, g.genero, z.cantidad FROM dbozapato z INNER JOIN dboestilo e ON z.id_estilo = e.id_estilo INNER JOIN dbotalla t ON t.id_talla = z.id_talla INNER JOIN dbogenero g ON g.id_genero=z.id_genero
-            ";
+            $query="SELECT * FROM fecha";
             $smt=$this->CNX->prepare($query);
             $smt->execute();
             $result = $smt->fetchAll(PDO::FETCH_OBJ);
@@ -30,7 +29,7 @@ class fecha{
         }catch(Exception $e){
             die($e->getMessage());
         }
-   
+    }
 
     public function cargarEstilo(){
 
@@ -46,7 +45,7 @@ class fecha{
         }
 
         
-    } }*/
+    } 
 
     public function cargarID($id){
 

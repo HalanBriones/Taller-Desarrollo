@@ -268,13 +268,38 @@
                       <br>
                       <h2><small><p>Al hacer click en el boton crear se enviara un correo a todos los postulantes y brigadistas menores de 55 años para repostular.</p></small></h2>
                       <br>
-                    
-                     <input type="submit" name="botonGuardar"value="guardar" class="btn btn-success col 3">
-                    
+                      
+                     <input type="submit" name="botonGuardar"value="Crear" class="btn btn-success ">
+                   
+                     
 
 
                   </form>
                 </div>
+              </div>
+              <div class="x_panel">
+                <div class="x_title">
+                  <h2>Lista de Periodos</h2>
+                  <div class="clearfix"></div>
+                </div>
+                <table class="table">
+                  <thead class="thead-dark">
+                    <tr>
+                      <th>Id Periodo</th>
+                      <th>Fecha Inicio</th>
+                      <th>Fecha Termino</th>
+                      <th>Modificar</th>
+                    </tr>
+                  </thead>
+                  <?php foreach($this->MODEL->listar() as $row):?>
+                    <tr>
+                      <td><?php echo $row->idFecha?></td>
+                      <td><?php echo $row->fechaInicio?></td>
+                      <td><?php echo $row->fechaFin?></td>
+                      
+                    </tr>
+                  <?php endforeach?>
+                </table>
               </div>
             </div>
           </div>
