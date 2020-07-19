@@ -10,14 +10,14 @@
 
   <title>Postulacion</title>
 
-  <!-- Bootstrap -->
-  <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap -->
+<link href="View/plantilla-proyecto/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Font Awesome -->
-  <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="View/plantilla-proyecto/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <!-- NProgress -->
-  <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
+  <link href="View/plantilla-proyecto/vendors/nprogress/nprogress.css" rel="stylesheet">
   <!-- Custom Theme Style -->
-  <link href="../build/css/custom.min.css" rel="stylesheet">
+  <link href="View/plantilla-proyecto/build/css/custom.min.css" rel="stylesheet">
 </head>
 
 <body class="nav-md">
@@ -416,15 +416,12 @@
                           <label class="col-form-label col-sm-6 ">Campos de Enfermedades</label>
                           <div class="col-md-12  form-group has-feedback">
                             <textarea class="form-control has-feedback-left" name="" id="" cols="30" rows="5"> </textarea>
-                            
                           </div>
                         </div>
-              
                       </div>
-                      
                     </div>
                     
-                      <input class="btn btn-success shadow" type="submit" value="Enviar">
+                    <input class="btn btn-success shadow" type="submit" value="Enviar">
                   </form>
                 </div>
               </div>

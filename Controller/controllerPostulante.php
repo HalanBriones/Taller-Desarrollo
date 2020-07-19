@@ -3,17 +3,17 @@
 class controllerPostulante{
 
     public $MODEL;
+
     public function __construct(){
         $this->MODEL = new postulante();
     }
 
-    public function index(){
-        
+    
+    public function index2(){
+
         include_once 'View/plantilla-proyecto/production/postulacionFinal.php';
-       // header("Location:View/plantilla-proyecto/production/creacionPeriodo.php");
-
     }
-
+    
     public function guardar(){
         $mo = new postulante();
         $mo->rut = $_POST['rut'];
@@ -22,7 +22,7 @@ class controllerPostulante{
         $mo->apellidoM = $_POST['apellidoM'];
 
         $this->MODEL->registrar($mo);
-        header("Location:index.php");
+        header("Location:index2.php");
 
     }
 }

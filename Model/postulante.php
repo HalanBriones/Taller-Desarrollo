@@ -14,7 +14,7 @@ class postulante{
             die($e->getMessage());
         }
     }
-
+    
     public function listar(){
         
        try{ 
@@ -29,9 +29,25 @@ class postulante{
         }
     }
 
+    public function cargarEstilo(){
+
+        try{
+            $query="SELECT * FROM dboestilo";
+            $smt=$this->CNX->prepare($query);
+            $smt->execute();
+            $result = $smt->fetchAll(PDO::FETCH_OBJ);
+
+            return $result;
+        }catch(Exception $e){
+            die($e->getMessage());
+        }
+
+        
+    } 
+
     public function registrar(postulante $data){
         try{
-            $query = "INSERT INTO postulante(rut,nombre,apellidoP,apellidoM) VALUES (?,?,?,?)";
+            $query = "INSERT INTO postulante values (?,?,?,?)";
             $this->CNX->prepare($query)->execute(array($data->rut,$data->nombre,$data->apellidoP,$data->apellidoM));
         }catch(Exception $e){
             die($e->getMessage());
