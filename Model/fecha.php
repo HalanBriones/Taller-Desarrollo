@@ -94,7 +94,6 @@ class fecha{
         try {
             $query = "INSERT INTO fecha (fechaInicio, fechaFin) values (?,?)";
             $this->CNX->prepare($query)->execute(array($data->fechaInicio,$data->fechaFin));
-            $this->CNX = conexion::conectar()->lastInsertId();
 
         } catch (Exception $e) {
             die($e->getMessage());
