@@ -1,5 +1,5 @@
 <?php 
-    include_once 'Model/postulante.php';
+ include_once 'Model/postulante.php';
 class controllerPostulante{
 
     public $MODEL;
@@ -9,7 +9,7 @@ class controllerPostulante{
     }
 
     
-    public function index2(){
+    public function index(){
 
         include_once 'View/plantilla-proyecto/production/postulacionFinal.php';
     }
@@ -22,7 +22,7 @@ class controllerPostulante{
         $mo->apellidoM = $_POST['apellidoM'];
 
         $this->MODEL->registrar($mo);
-        header("Location:index2.php");
+        header("Location:enrrutamientoPostulante.php");
 
     }
 }
