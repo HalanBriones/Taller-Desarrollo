@@ -1,6 +1,5 @@
 
 <?php
-
 class conexion{
     public static function conectar(){
         $con = new PDO("mysql: host=localhost; dbname=fecha; charset=utf8","root","");
@@ -9,5 +8,4 @@ class conexion{
     }
 
 }
-
 ?>
