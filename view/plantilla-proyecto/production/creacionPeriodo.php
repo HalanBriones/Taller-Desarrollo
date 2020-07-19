@@ -32,6 +32,8 @@
         monthNames: ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"],
         dateFormat:"yy/mm/dd",
         numberOfMonths: 1,
+        //minDate: new Date(),
+        defaultDate:  '<?php $año?>-05-01',  
         onSelect: function(selected) {
           $("#txtToDate").datepicker("option","minDate", selected)
         }
@@ -282,7 +284,7 @@
                       <label class="col-form-label col-sm-2 ">Fecha Inicio </label>
                       <div class="col-md-6 col-sm-6  form-group has-feedback">
                         <input type="text" class="form-control has-feedback-left col-4  " required id="txtFromDate"
-                           value="<?php echo $año ?>-05-01" name="fechaIni" autocomplete="off">
+                           value="<?php echo $año ?>/05/01" name="fechaIni" autocomplete="off">
                         <span class="fa fa-calendar form-control-feedback left" aria-hidden="true"></span>
                       </div>
                     </div>
@@ -291,7 +293,7 @@
                       <label class="col-form-label col-sm-2 ">Fecha Fin </label>
                       <div class="col-md-6 col-sm-6  form-group has-feedback">
                         <input type="text" class="form-control has-feedback-left col-4" id="txtToDate"
-                          value="<?php echo $año ?>-09-01" name="fechaFin" autocomplete="off">
+                          value="<?php echo $año ?>/09/01" name="fechaFin" autocomplete="off">
                         <span class="fa fa-calendar form-control-feedback left" aria-hidden="true"></span>
                       </div>
                     </div>
