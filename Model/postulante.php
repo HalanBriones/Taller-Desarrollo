@@ -2,10 +2,24 @@
 class postulante{
 
     public $CNX;
-    public $rut;
+    public $RUT;
     public $nombre;
-    public $apellidoP;
-    public $apellidoM;
+    public $segundo_nombre;
+    public $apellido_paterno;
+    public $apellido_materno;
+    public $fecha_nacimiento;
+    public $sexo;
+    public $estado;
+    public $nivel_estudio;
+    public $telefono;
+    public $telefono_emergencia;
+    public $correo;
+    public $enfermedades;
+    public $talla_superior;
+    public $talla_inferior;
+    public $talla_calzado;
+    public $Comuna_idComuna;
+    public $Estado_Civil_idEstado_Civil;
 
     public function __construct(){
         try{
@@ -48,7 +62,7 @@ class postulante{
     public function registrar(postulante $data){
         try{
             $query = "INSERT INTO postulante values (?,?,?,?)";
-            $this->CNX->prepare($query)->execute(array($data->rut,$data->nombre,$data->apellidoP,$data->apellidoM));
+            $this->CNX->prepare($query)->execute(array($data->RUT,$data->nombre,$data->apellido_paterno,$data->apellido_materno,$data->fecha_nacimiento,$data->sexo,$data->estado,$data->nivel_estudio,$data->telefono,$data->telefono_emergencia,$data->correo,$data->enfermedades,$data->talla_superior,$data->talla_inferior,$data->talla_calzado,$data->Comuna_idComuna,$data->Estado_Civil_idEstado_Civil));
         }catch(Exception $e){
             die($e->getMessage());
         }

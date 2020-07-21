@@ -268,7 +268,7 @@
                         <div class="form-group col-sm-12">
                           <label class="col-form-label col-sm-6 ">Apellido Paterno </label>
                           <div class="col-md-12 col-sm-12  form-group has-feedback">
-                            <input type="text" name="apellidoP" class="form-control has-feedback-left" id="inputSuccess2" placeholder="Brito">
+                            <input type="text" name="apellido_paterno" class="form-control has-feedback-left" id="inputSuccess2" placeholder="Brito">
                             <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
                           </div>
                         </div>
@@ -276,7 +276,7 @@
                         <div class="form-group col-sm-12">
                           <label class="col-form-label col-sm-6 ">Apellido Materno </label>
                           <div class="col-md-12  form-group has-feedback">
-                            <input type="text" name="apellidoM" class="form-control has-feedback-left" id="inputSuccess2" placeholder="Briones">
+                            <input type="text" name="apellido_materno" class="form-control has-feedback-left" id="inputSuccess2" placeholder="Briones">
                             <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
                           </div>
                         </div>
@@ -284,7 +284,7 @@
                         <div class="form-group col-sm-12">
                           <label class="col-form-label col-sm-6 ">Educacion </label>
                           <div class="col-md-12 col-sm- ">
-                            <select class="select2_group form-control educ">
+                            <select class="select2_group form-control educ" name="nivel_estudio">
                               <option value="oo">Nivel de Educación</option>
                               <optgroup label="Enseñanza basica">
                                 <option value="AK">No cursada</option>
@@ -308,7 +308,7 @@
                         <div class="form-group col-sm-12">
                           <label class="col-form-label col-sm-6 ">Fecha Nacimiento </label>
                           <div class="col-md-12  form-group has-feedback">
-                            <input type="date" class="form-control has-feedback-left" id="inputSuccess2">
+                            <input type="date" name="fecha_nacimiento" class="form-control has-feedback-left" id="inputSuccess2">
                             <span class="fa fa-calendar form-control-feedback left" aria-hidden="true"></span>
                           </div>
                         </div>
