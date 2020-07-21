@@ -129,7 +129,7 @@ class fecha{
             $result = $smt->fetchColumn();
             return $result;
         } catch (Exception $e) {
-            die($e->getMessage);
+            die($e->getMessage());
         }
     }
 

@@ -314,11 +314,69 @@
                         </div>
               
                         <div class="form-group col-sm-12">
-                          <label class="col-form-label col-sm-6 ">Direccion </label>
-                          <div class="col-md-12  form-group has-feedback">
-                            <input type="text" class="form-control has-feedback-left" id="inputSuccess2"
-                              placeholder="El Pino 845 Las lomas, Los angeles">
-                            <span class="fa fa-map-marker form-control-feedback left" aria-hidden="true"></span>
+                          <label class="col-form-label col-sm-6 ">Talla Superior</label>
+                          <div class="col-md-12 col-sm- ">
+                            <select class="select2_group form-control educ" name="talla_superior"  >
+                               <option value="oo">Ingresar Talla</option> 
+                              <optgroup label="Tallas">
+                                <option value="S">Talla S</option>
+                                <option value="M">Talla M</option>
+                                <option value="L">Talla L</option>
+                                <option value="XL">Talla XL</option>
+                              </optgroup>
+                             
+                            </select>
+                            <span class="fa fa-arrows form-control-feedback left" aria-hidden="true"></span>
+                          </div>
+                        </div>
+                        <div class="form-group col-sm-12">
+                          <label class="col-form-label col-sm-6 ">Talla Inferior</label>
+                          <div class="col-md-12 col-sm- ">
+                            <select class="select2_group form-control educ" name="talla_inferior"  >
+                               <option value="oo">Ingresar Talla</option> 
+                              <optgroup label="Tallas">
+                                <option value="S">Talla 32</option>
+                                <option value="M">Talla 34</option>
+                                <option value="L">Talla 36</option>
+                                <option value="XL">Talla 38</option>
+                                <option value="XL">Talla 40</option>
+                                <option value="XL">Talla 42</option>
+                                <option value="XL">Talla 44</option>
+                                <option value="XL">Talla 46</option>
+                                <option value="XL">Talla 48</option>
+                              </optgroup>
+                            </select>
+                            <span class="fa fa-arrows form-control-feedback left" aria-hidden="true"></span>
+                          </div>
+                        </div>
+                        <div class="form-group col-sm-12">
+                          <label class="col-form-label col-sm-6 ">Talla Calzado</label>
+                          <div class="col-md-12 col-sm- ">
+                            <select class="select2_group form-control educ" name="talla_calzado"  >
+                               <option value="oo">Ingresar Talla</option> 
+                              <optgroup label="Tallas">
+                                <option value="S">Talla 35</option>
+                                <option value="M">Talla 35,5</option>
+                                <option value="L">Talla 36</option>
+                                <option value="XL">Talla 36,5</option>
+                                <option value="XL">Talla 37</option>
+                                <option value="XL">Talla 37,5</option>
+                                <option value="XL">Talla 38</option>
+                                <option value="XL">Talla 38,5</option>
+                                <option value="XL">Talla 39</option>
+                                <option value="XL">Talla 39,5</option>
+                                <option value="XL">Talla 40</option>
+                                <option value="XL">Talla 40,5</option>
+                                <option value="XL">Talla 41</option>
+                                <option value="XL">Talla 41,5</option>
+                                <option value="XL">Talla 42</option>
+                                <option value="XL">Talla 42,5</option>
+                                <option value="XL">Talla 43</option>
+                                <option value="XL">Talla 43,5</option>
+                                <option value="XL">Talla 44</option>
+                              </optgroup>
+                            </select>
+                            <span class="fa fa-arrows form-control-feedback left" aria-hidden="true"></span>
                           </div>
                         </div>
                       </div>
@@ -329,26 +387,12 @@
                         <div class="form-group col-sm-12">
                           <label class="col-form-label col-sm-6 ">Region </label>
                           <div class="col-md-12 col-sm- ">
-                            <select class="select2_group form-control educ" >
-                               <option value="oo">Ingresar Region</option> 
-                              <optgroup label="Regiones de Chile">
-                                <option value="AA">Region de Arica y Parinacota</option>
-                                <option value="BB">Region de Taparacá</option>
-                                <option value="CC">Region de Antofagasta</option>
-                                <option value="DD">Region de Atacama</option>
-                                <option value="EE">Region de Coquimbo</option>
-                                <option value="FF">Region de Valparaíso</option>
-                                <option value="GG">Region Metropolitana</option>
-                                <option value="HH">Region de O´Higgins</option>
-                                <option value="II">Region del Maule</option>
-                                <option value="JJ">Region de Ñuble</option>
-                                <option value="KK">Region del BioBio</option>
-                                <option value="LL">Region de la Araucanía</option>
-                                <option value="MM">Region de Los Ríos</option>
-                                <option value="NN">Region de Los Lagos</option>
-                                <option value="OO">Region de Aysén</option>
-                                <option value="PP">Region de Magallanes</option>
-                              </optgroup>
+                            <select class="select2_group form-control educ" name="region"  >
+                              <option value="">Ingresar Region</option>
+
+                              <?php foreach($this->MODEL->listarRegiones() as $region) :?>
+                              <option value=""><?php echo $region->nombre_region?></option>
+                              <?php endforeach ?>
                              
                             </select>
                             <span class="fa fa-arrows form-control-feedback left" aria-hidden="true"></span>
@@ -358,7 +402,7 @@
                         <div class="form-group col-sm-12">
                           <label class="col-form-label col-sm-6 ">Telefono Personal </label>
                           <div class="col-md-12  form-group has-feedback">
-                            <input type="text" class="form-control has-feedback-left" id="inputSuccess2" placeholder="+569 48573923">
+                            <input type="text" name="telefono" class="form-control has-feedback-left" id="inputSuccess2" placeholder="+569 48573923">
                             <span class="fa fa-phone form-control-feedback left" aria-hidden="true"></span>
                           </div>
                         </div>
@@ -366,7 +410,7 @@
                         <div class="form-group col-sm-12">
                           <label class="col-form-label col-sm-6 ">Telefono de Emergencia </label>
                           <div class="col-md-12  form-group has-feedback">
-                            <input type="text" class="form-control has-feedback-left" id="inputSuccess2" placeholder="+569 56764939">
+                            <input type="text" name="telefono_emergencia" class="form-control has-feedback-left" id="inputSuccess2" placeholder="+569 56764939">
                             <span class="fa fa-phone form-control-feedback left" aria-hidden="true"></span>
                           </div>
                         </div>
@@ -375,7 +419,7 @@
                           <label class="col-form-label col-sm-6 ">Sexo </label>
                           <div class="col-md-12  form-group has-feedback">
                             <div class="form-check">
-                              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1"
+                              <input class="form-check-input" type="radio" name="sexo" id="exampleRadios1" value="option1"
                                 checked>
                               <label class="form-check-label" for="exampleRadios1">
                                 Masculino
@@ -383,21 +427,40 @@
                               <span class="fa fa-male form-control-feedback genero "></span>
                             </div>
                             <div class="form-check">
-                              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                              <input class="form-check-input" type="radio" name="sexo" id="exampleRadios2" value="option2">
                               <label class="form-check-label" for="exampleRadios2">
                                 Femenino
                               </label>
                               <span class="fa fa-female form-control-feedback genero"></span>
                             </div>
-              
+                            <div class="form-check">
+                              <input class="form-check-input" type="radio" name="sexo" id="exampleRadios3" value="option3">
+                              <label class="form-check-label" for="exampleRadios3">
+                                Otro
+                              </label>
+                              <span class="fa  form-control-feedback genero"></span>
+                            </div>
               
                           </div>
                         </div>
-              
+
+                        <div class="form-group col-sm-12">
+                          <label class="col-form-label col-sm-6 ">Estado Civil</label>
+                          <div class="col-md-12 col-sm- ">
+                            <select class="select2_group form-control educ" name="estado_civil"  >
+                               <option value="oo">Ingresar Estado Civil</option> 
+                                <?php foreach($this->MODEL->listarEstadoCivil() as $estado) : ?>
+                                <option value=""><?php echo $estado->nombre_estado?></option>
+                                <?php endforeach ?>
+                            </select>
+                            <span class="fa fa-arrows form-control-feedback left" aria-hidden="true"></span>
+                          </div>
+                        </div>
+
                         <div class="form-group col-sm-12">
                           <label class="col-form-label col-sm-6 ">Email </label>
                           <div class="col-md-12  form-group has-feedback">
-                            <input type="text" class="form-control has-feedback-left" id="inputSuccess2"
+                            <input type="text" name="correo" class="form-control has-feedback-left" id="inputSuccess2"
                               placeholder="halan.briones1701@alumnos.ubiobio.cl">
                             <span class="fa fa-envelope form-control-feedback left" aria-hidden="true"></span>
                           </div>
@@ -415,7 +478,7 @@
                         <div class="form-group col-sm-12">
                           <label class="col-form-label col-sm-6 ">Campos de Enfermedades</label>
                           <div class="col-md-12  form-group has-feedback">
-                            <textarea class="form-control has-feedback-left" name="" id="" cols="30" rows="5"> </textarea>
+                            <textarea class="form-control has-feedback-left" name="enfermedades" id="" cols="30" rows="5"> </textarea>
                           </div>
                         </div>
                       </div>
