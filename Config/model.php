@@ -1,6 +1,24 @@
 <?php
 
+  require_once "config.php";
+
 class Model {
+
+  public function conectar()
+  {
+    $enlace = new PDO(SGBD, USER, PASS);
+
+    return $enlace;
+  }
+
+  public function ejecutar_consulta_simple($consulta)
+  {
+
+    $respuesta = Model::conectar()->prepare($consulta);
+    $respuesta->execute();
+
+    return $respuesta;
+  }
   
   public function limpiar_rut($variable)
   {
@@ -25,6 +43,8 @@ class Model {
     $cadena = str_ireplace("SELECT * FROM", "", $cadena);
     $cadena = str_ireplace("DELETE FROM", "", $cadena);
     $cadena = str_ireplace("INSERT INTO", "", $cadena);
+    $cadena = str_ireplace("OR", "", $cadena);
+    $cadena = str_ireplace("AND", "", $cadena);
     $cadena = str_ireplace("--", "", $cadena);
     $cadena = str_ireplace("^", "", $cadena);
     $cadena = str_ireplace("[", "", $cadena);
